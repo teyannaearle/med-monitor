@@ -1,4 +1,4 @@
-\c production_database_name;
+\c dbuvlv64b806mc;
 
 DROP TABLE IF EXISTS test;
 

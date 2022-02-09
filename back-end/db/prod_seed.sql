@@ -1,4 +1,4 @@
-\c production_database_name;
+\c dbuvlv64b806mc;
 
 INSERT INTO test (name) VALUES
 ('Monday'),
