@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useState, useEffect } from "react";
+const API = process.env.REACT_APP_API_URL;
 
+console.log(API);
 function App() {
+  const [days, setDays] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${API}/test`)
+      .then(
+        (response) => {
+          setDays(response.data);
+        },
+        (error) => console.log("get", error)
+      )
+      .catch((c) => console.warn("catch", c));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        {days.map((day) => (
+          <li key={day.name}>{day.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
