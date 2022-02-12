@@ -1,6 +1,6 @@
 import React from 'react'
 import Intro from '../../components/home/Intro'
-import SignInForm from '../../components/home/SignInForm'
+import SignIn from '../../components/home/SignIn'
 import './HomePage.scss'
 
 function HomePage() {
@@ -10,7 +10,7 @@ function HomePage() {
         <h1>Med&middot;Monitor</h1>
         <div> 
           <Intro />
-          <SignInForm />
+          <SignIn />
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express")
+const usersController = require("./controllers/usersController")
+
 
 //CONFIGURATION
 // const res = require("express/lib/response")
@@ -14,6 +16,8 @@ app.use(express.json()); // Parse incoming JSON
 app.get("/", (req, res) => {
     res.send("Testing Testing 123")
 })
+
+app.use("/users", usersController)
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
