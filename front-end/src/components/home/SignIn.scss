@@ -8,10 +8,20 @@
         margin-left: auto;
         margin-right: auto;
         font-size: 1.25rem;
+        text-align: center;
+    }
+
+    &__button{
+        margin-left: auto;
+        margin-right: auto;
+
+        &:hover{
+            transform: scale(1.02);
+        }
+
+        &:active{
+            transform: scale(1);
+        }
     }
 }
 
-.g-signin2 .abcRioButton{
-    width: 75% !important;
-    margin: auto;
-}

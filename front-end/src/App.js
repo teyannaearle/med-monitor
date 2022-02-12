@@ -11,7 +11,6 @@ function App() {
   const user = useContext(UserContext);
   const token = user.token
 
-
   // useEffect(() => {
   //   axios
   //     .get(`${API}/users`)
