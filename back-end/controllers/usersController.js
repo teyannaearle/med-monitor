@@ -30,7 +30,7 @@ users.get("/:email", async (req, res) => {
   try {
     const user = await getUser(email);
     console.log(user);
-    if (user) {
+    if (user.email) {
       res.status(200).json({
         success: true,
         payload: user,
