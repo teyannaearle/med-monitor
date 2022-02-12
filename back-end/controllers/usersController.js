@@ -3,25 +3,48 @@ const users = express.Router({ mergeParams: true });
 
 const { getUser, createNewUser } = require("../queries/users");
 
+// users.get("/:email", async (req, res) => {
+//   const { email } = req.params;
+
+//   try {
+//     const user = await getUser(email);
+//     // console.log(user);
+//     if (user.email){
+//       res.status(200).json({
+//         success: true,
+//         payload: user,
+//       });
+//     } 
+//     else {
+//       throw `No registered user found with email ${email}`
+//     }
+//   } catch (e) {
+//     res.status(404).json({
+//       success: false,
+//       message: e,
+//     });
+//   }
+// });
 users.get("/:email", async (req, res) => {
   const { email } = req.params;
-
   try {
     const user = await getUser(email);
-    // console.log(user);
-    if (user.email){
+    console.log(user);
+    if (user) {
       res.status(200).json({
         success: true,
         payload: user,
       });
-    } 
-    else {
-      throw `No registered user found with email ${email}`
+    } else {
+      res.status(200).json({
+        success: false,
+        payload: `No registered user found with email ${email}`,
+      });
     }
   } catch (e) {
     res.status(404).json({
       success: false,
-      message: e,
+      payload: e,
     });
   }
 });

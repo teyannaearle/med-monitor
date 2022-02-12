@@ -21,9 +21,10 @@ console.log("not posted")
         let newUser = {email: signedIn.email}
         let postRequest = await axios.post(`${API}/users`, newUser)
 console.log(postRequest)
-console.log("posted")
         if (postRequest.data.success){
 //push 
+console.log("posted")
+
         }
       }
     }
