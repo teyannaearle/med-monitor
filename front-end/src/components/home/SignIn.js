@@ -1,27 +1,27 @@
 import axios from "axios";
+import { apiURL } from "../../util/apiURL.js";
+import { useNavigate } from "react-router-dom";
 import { signInWithGoogle, userSignOut } from "../../services/firebase";
 import GoogleButton from "react-google-button";
 import "./SignIn.scss";
 
-const API = process.env.REACT_APP_API_URL;
+const API = apiURL();
 
 function SignInForm() {
+  let navigate = useNavigate();
+
   const signInOrUP = async () => {
     let signedIn = await signInWithGoogle();
     if (signedIn.email) {
       const { email } = signedIn;
       let pastUser = await axios.get(`${API}/users/${email}`);
-      console.log(pastUser);
       if (pastUser.data.success) {
-        // push
-        console.log("not posted");
+        navigate("/dashboard");
       } else {
         let newUser = { email: signedIn.email };
-        let postRequest = await axios.post(`${API}/users`, newUser);
-        console.log(postRequest);
+        let postRequest = await axios.post(`${API}/users/`, newUser);
         if (postRequest.data.success) {
-          //push
-          console.log("posted");
+          navigate("/dashboard");
         }
       }
     }

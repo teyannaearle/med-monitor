@@ -1,31 +1,47 @@
 import './App.scss'
 import axios from 'axios';
+import { apiURL } from './util/apiURL.js';
 import { useState, useEffect, useContext } from 'react';
-import { UserContext } from "./providers/UserProvider";
+import { UserContext } from './providers/UserProvider';
 import HomePage from './pages/home/HomePage';
-const API = process.env.REACT_APP_API_URL;
+import { Routes, Route, Link } from "react-router-dom";
+import Dashboard from './pages/home/Dashboard';
+import { useNavigate } from "react-router-dom";
+
+
+const API = apiURL()
 
 
 function App() {
   const [userId, setUserId] = useState([]);
   const user = useContext(UserContext);
-  const token = user.token
+  let navigate = useNavigate();
+  // const token = user.token
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/users`)
-  //     .then(
-  //       (response) => {
-  //         // setDays(response.data);
-  //       },
-  //       (error) => console.log("get", error)
-  //     )
-  //     .catch((c) => console.warn("catch", c));
-  // }, []);
+  useEffect(()=>{
+    console.log(user)
+  },[navigate])
+
+
+  useEffect(() => {
+    axios
+      .get(`${API}/users/fakeemail@email.com`)
+      .then(
+        (response) => {
+          // console.log(response)
+        },
+        (error) => console.log("get", error)
+      )
+      .catch((c) => console.warn("catch", c));
+  }, []);
+  
 
   return (
     <div className='App'>
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }

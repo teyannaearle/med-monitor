@@ -1,3 +1,8 @@
+DROP DATABASE IF EXISTS med_monitor;
+CREATE DATABASE med_monitor;
+\c med_monitor;
+
+
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY, 
