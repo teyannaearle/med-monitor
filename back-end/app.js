@@ -1,8 +1,8 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express")
+const middleware = require("./middleware")
 const usersController = require("./controllers/usersController")
-
 
 //CONFIGURATION
 // const res = require("express/lib/response")
@@ -11,6 +11,7 @@ const app = express()
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
+app.use(middleware.decodeToken)
 
 //ROUTES
 app.get("/", (req, res) => {
@@ -24,14 +25,6 @@ app.use("/users", usersController)
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
-});
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
