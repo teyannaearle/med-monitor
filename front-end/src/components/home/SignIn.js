@@ -24,9 +24,8 @@ function SignInForm() {
               Authorization: "Bearer " + user.token,
             },
           })
-          .then((user) => {
-            if (user.data.success) {
-              console.log("success");
+          .then((res) => {
+            if (res.data.success) {
               navigate("/dashboard");
             } else {
               signUp(email);
@@ -47,9 +46,8 @@ function SignInForm() {
             Authorization: "Bearer " + user.token,
           },
         })
-        .then((user) => {
-          if (user.data.success) {
-            console.log("success");
+        .then((res) => {
+          if (res.data.success) {
             navigate("/dashboard");
           }
         });
