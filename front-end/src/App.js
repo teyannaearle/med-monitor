@@ -15,27 +15,27 @@ function App() {
   const user = useContext(UserContext);
   let navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(user);
-  }, [navigate]);
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [navigate]);
 
-  useEffect(() => {
-    if (user) {
-      axios
-        .get(`${API}/users/fakeemail@email.com`, {
-          headers: {
-            Authorization: "Bearer " + user.token,
-          },
-        })
-        .then(
-          (response) => {
-            console.log(response);
-          },
-          (error) => console.log("get", error)
-        )
-        .catch((c) => console.warn("catch", c));
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     axios
+  //       .get(`${API}/users/fakeemail@email.com`, {
+  //         headers: {
+  //           Authorization: "Bearer " + user.token,
+  //         },
+  //       })
+  //       .then(
+  //         (response) => {
+  //           console.log(response);
+  //         },
+  //         (error) => console.log("get", error)
+  //       )
+  //       .catch((c) => console.warn("catch", c));
+  //   }
+  // }, [user]);
 
   return (
     <div className="App">

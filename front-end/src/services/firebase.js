@@ -20,6 +20,7 @@ export const signInWithGoogle = async () => {
     let result = null;
     try {
       await signOut(auth).then(() => {
+        console.log("signed out")
       });
     } catch (error) {
       result = error.code;

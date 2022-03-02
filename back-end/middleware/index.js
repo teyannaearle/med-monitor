@@ -8,7 +8,6 @@ class MiddleWare {
       token = token.split(" ")[1];
       try {
         const decodeValue = await admin.auth().verifyIdToken(token);
-
         if (decodeValue) {
           return next();
         }

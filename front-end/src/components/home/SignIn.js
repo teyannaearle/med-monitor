@@ -1,6 +1,8 @@
 import axios from "axios";
 import { apiURL } from "../../util/apiURL.js";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserProvider";
 import { signInWithGoogle, userSignOut } from "../../services/firebase";
 import GoogleButton from "react-google-button";
 import "./SignIn.scss";
@@ -8,22 +10,51 @@ import "./SignIn.scss";
 const API = apiURL();
 
 function SignInForm() {
+  const user = useContext(UserContext);
   let navigate = useNavigate();
 
-  const signInOrUP = async () => {
+  const signIn = async () => {
     let signedIn = await signInWithGoogle();
     if (signedIn.email) {
       const { email } = signedIn;
-      let pastUser = await axios.get(`${API}/users/${email}`);
-      if (pastUser.data.success) {
-        navigate("/dashboard");
-      } else {
-        let newUser = { email: signedIn.email };
-        let postRequest = await axios.post(`${API}/users/`, newUser);
-        if (postRequest.data.success) {
-          navigate("/dashboard");
-        }
+      try {
+        await axios
+          .get(`${API}/users/${email}`, {
+            headers: {
+              Authorization: "Bearer " + user.token,
+            },
+          })
+          .then((user) => {
+            if (user.data.success) {
+              console.log("success");
+              navigate("/dashboard");
+            } else {
+              signUp(email);
+            }
+          });
+      } catch (error) {
+        console.error(error);
       }
+    }
+  };
+
+  const signUp = async (email) => {
+    let newUser = { email };
+    try {
+      await axios
+        .post(`${API}/users/`, newUser, {
+          headers: {
+            Authorization: "Bearer " + user.token,
+          },
+        })
+        .then((user) => {
+          if (user.data.success) {
+            console.log("success");
+            navigate("/dashboard");
+          }
+        });
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -34,7 +65,7 @@ function SignInForm() {
         repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit
         eaque?
       </p>
-      <GoogleButton onClick={signInOrUP} className="signIn__button" />
+      <GoogleButton onClick={signIn} className="signIn__button" />
       <a href="#" onClick={userSignOut}>
         Sign out
       </a>
