@@ -12,10 +12,10 @@ const API = apiURL();
 function SignInForm() {
   const user = useContext(UserContext);
   let navigate = useNavigate();
-
   const signIn = async () => {
     let signedIn = await signInWithGoogle();
-    if (signedIn.email) {
+
+    if (signedIn.email && user) {
       const { email } = signedIn;
       try {
         await axios
@@ -26,6 +26,7 @@ function SignInForm() {
           })
           .then((res) => {
             if (res.data.success) {
+              console.log("ok")
               navigate("/dashboard");
             } else {
               signUp(email);
