@@ -12,6 +12,7 @@ const API = apiURL();
 function SignInForm() {
   const user = useContext(UserContext);
   let navigate = useNavigate();
+
   const signIn = async () => {
     let signedIn = await signInWithGoogle();
 
@@ -26,7 +27,7 @@ function SignInForm() {
           })
           .then((res) => {
             if (res.data.success) {
-              console.log("ok")
+              console.log("signed in")
               navigate("/dashboard");
             } else {
               signUp(email);
@@ -49,6 +50,7 @@ function SignInForm() {
         })
         .then((res) => {
           if (res.data.success) {
+            console.log("signed in")
             navigate("/dashboard");
           }
         });

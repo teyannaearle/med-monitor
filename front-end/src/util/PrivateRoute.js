@@ -1,11 +1,8 @@
-import { Navigate } from 'react-router-dom';
-import { useContext } from "react";
-import { UserContext } from "../providers/UserProvider";
+import { Navigate, Outlet } from 'react-router-dom';
 
-const PrivateRoute = ({ children }) => {
-    let user = useContext(UserContext)
-    console.log(user)
-    return user ? children : <Navigate to="/" />;
+const PrivateRoute = ({ children, ...rest }) => {
+    const loggedIn = window.localStorage.getItem("loggedIn")
+    return loggedIn === "true" ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default PrivateRoute;

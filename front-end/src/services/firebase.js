@@ -9,6 +9,7 @@ export const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider).then((userCred) => {
       result = userCred.user
+      localStorage.setItem("loggedIn", true)
     }) 
     } catch(error){
       result = error.code;
@@ -21,6 +22,7 @@ export const signInWithGoogle = async () => {
     try {
       await signOut(auth).then(() => {
         console.log("signed out")
+        localStorage.setItem("loggedIn", false)
       });
     } catch (error) {
       result = error.code;

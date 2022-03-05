@@ -1,7 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { auth } from "../services/firebase";
 
-
 export const UserContext = createContext({ user: null });
 
 export const UserProvider = ({ children }) => {
@@ -12,12 +11,15 @@ export const UserProvider = ({ children }) => {
       if (userCred) {
         const { displayName, email } = userCred;
         let token = await userCred.getIdToken()
-        setuser({ displayName, email, token });
-      }
+        setuser({ displayName, email, token });   
+      } 
     });
   }, []);
 
+
   return (
+    <> 
     <UserContext.Provider value={user}>{children}</UserContext.Provider>
+    </>
   );
 };
