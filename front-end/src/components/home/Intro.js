@@ -5,7 +5,7 @@ import medImage from "../../assets/med-monitor.png"
 function Intro() {
   return (
     <div className="intro">
-      <img className="intro__pic" src={medImage}/>
+      <img className="intro__pic" src={medImage} alt="Med Monitor Logo"/>
     </div>
   )
 }
