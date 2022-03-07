@@ -1,8 +1,8 @@
 import axios from "axios";
 import { apiURL } from "../../util/apiURL.js";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../providers/UserProvider";
+// import { useContext } from "react";
+// import { UserContext } from "../../providers/UserProvider";
 import { signInWithGoogle, userSignOut } from "../../services/firebase";
 import GoogleButton from "react-google-button";
 import "./SignIn.scss";
@@ -10,7 +10,7 @@ import "./SignIn.scss";
 const API = apiURL();
 
 function SignInForm() {
-  const user = useContext(UserContext);
+  // const user = useContext(UserContext);
   let navigate = useNavigate();
 
   const signIn = async () => {

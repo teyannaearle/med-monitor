@@ -1,10 +1,11 @@
 import React from "react"
 import "./Intro.scss"
+import medImage from "../../assets/med-monitor.png"
 
 function Intro() {
   return (
     <div className="intro">
-      <img className="intro__pic" src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"/>
+      <img className="intro__pic" src={medImage}/>
     </div>
   )
 }
