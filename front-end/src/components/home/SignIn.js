@@ -15,42 +15,37 @@ function SignInForm() {
 
   const signIn = async () => {
     let signedIn = await signInWithGoogle();
-
-    if (signedIn.email && user) {
-      const { email } = signedIn;
+      const { email , accessToken } = signedIn;
       try {
         await axios
           .get(`${API}/users/${email}`, {
             headers: {
-              Authorization: "Bearer " + user.token,
+              Authorization: "Bearer " + accessToken,
             },
           })
           .then((res) => {
             if (res.data.success) {
-              console.log("signed in")
               navigate("/dashboard");
             } else {
-              signUp(email);
+              signUp(email, accessToken);
             }
           });
       } catch (error) {
         console.error(error);
       }
-    }
   };
 
-  const signUp = async (email) => {
+  const signUp = async (email, accessToken) => {
     let newUser = { email };
     try {
       await axios
         .post(`${API}/users/`, newUser, {
           headers: {
-            Authorization: "Bearer " + user.token,
+            Authorization: "Bearer " + accessToken,
           },
         })
         .then((res) => {
           if (res.data.success) {
-            console.log("signed in")
             navigate("/dashboard");
           }
         });

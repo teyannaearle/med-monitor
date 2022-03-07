@@ -6,7 +6,7 @@ export const signInWithGoogle = async () => {
     const googleProvider = new GoogleAuthProvider();
     let result = null;
 
-    try {
+    try { 
       await signInWithPopup(auth, googleProvider).then((userCred) => {
       result = userCred.user
       localStorage.setItem("loggedIn", true)
