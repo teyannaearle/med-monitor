@@ -6,7 +6,8 @@ function Navbar() {
   return (
     <nav className="nav">
       <div className="nav__image">
-      <img src={medImage} alt="Med Monitor Logo" />
+        <img src={medImage} alt="Med Monitor Logo" />
+        <p>Med&middot;Monitor</p>
       </div>
       <div className="nav__list">
         <a href="#">Pharmacies and Doctors</a>

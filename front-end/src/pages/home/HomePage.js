@@ -15,7 +15,6 @@ function HomePage() {
   return (
     <div className="homePage">
       <div className="homePage__main">
-        {/* <h1>Med&middot;Monitor</h1> */}
         <div> 
           <Logo />
           <SignIn />
