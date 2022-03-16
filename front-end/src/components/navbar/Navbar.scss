@@ -4,7 +4,7 @@
     @include muted-background;
     height: 64px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -24,12 +24,11 @@
         margin-right: 20px;
 
         a {
+            @include button;
             display: inline-block;
             margin : 10px;
-            background-color: $blue;
             padding: 10px;
             border-radius: 4px;
-            color: ivory;
 
             &:hover{
                 transform: scale(1.02);
