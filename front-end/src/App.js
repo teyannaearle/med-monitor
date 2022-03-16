@@ -1,16 +1,15 @@
 import "./App.scss";
 import { apiURL } from "./util/apiURL.js";
-import { useContext } from "react";
-import { UserContext } from "./providers/UserProvider";
+// import { useContext } from "react";
+// import { UserContext } from "./providers/UserProvider";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./util/PrivateRoute";
 import HomePage from "./pages/home/HomePage";
 import Dashboard from "./pages/Dashboard";
-
 const API = apiURL();
 
 function App() {
-  const user = useContext(UserContext);
+  // const user = useContext(UserContext);
 
   return (
     <div className="App">

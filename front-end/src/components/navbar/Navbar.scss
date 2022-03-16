@@ -1,8 +1,23 @@
 .nav {
-    height: 150px;
+    height: 64px;
     width: 100%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    
     img {
         float: left;
         height: 100%;
+        margin-left: 20px;
+        display: flex;
+    }
+
+    &__list{
+        margin-right: 20px;
+        float: right;
+        display: flex;
+        
+        a {
+            margin : 10px
+        }
     }
 }

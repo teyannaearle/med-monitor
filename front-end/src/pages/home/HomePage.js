@@ -8,9 +8,9 @@ function HomePage() {
   const navigate = useNavigate();
   const loggedIn = JSON.parse(window.localStorage.getItem("loggedIn"))
 
-  // useEffect(()=>{
-  //   if (loggedIn) navigate("/dashboard")
-  // },[loggedIn])
+  useEffect(()=>{
+    if (loggedIn) navigate("/dashboard")
+  },[loggedIn])
 
   return (
     <div className="homePage">
