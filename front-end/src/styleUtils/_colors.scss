@@ -9,15 +9,3 @@ $yellow-pink-radial: radial-gradient(circle, rgba(255,198,117,1) 0%, rgba(226,18
 $yellow-pink-radial-light: radial-gradient(circle, rgba(255,198,117,0.5) 0%, rgba(226,181,186,0.6) 50%, rgba(231,113,125,0.6) 100%);
 $blue: #59ade3;
 $pink: #d63169;
-
-@mixin button {
-    background-color: #59ade3;
-    color: ivory;
-    border-radius: 4px;
-}
-@mixin muted-background {
-    background-color: rgba(255, 255, 240, 0.3);
-    -webkit-box-shadow: 1px 2px 15px 5px #dfdfd04d; 
-    box-shadow: 1px 2px 15px 5px #dfdfd04d;
-}
-

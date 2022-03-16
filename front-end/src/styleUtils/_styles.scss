@@ -1,0 +1,11 @@
+@mixin button {
+    background-color: #59ade3;
+    color: ivory;
+    border-radius: 4px;
+}
+
+@mixin muted-background {
+    background-color: rgba(255, 255, 240, 0.3);
+    -webkit-box-shadow: 1px 2px 15px 5px #dfdfd04d; 
+    box-shadow: 1px 2px 15px 5px #dfdfd04d;
+}
