@@ -52,10 +52,11 @@ function SignInForm() {
     } catch (error) {
       console.error(error);
     }
-  };
+  };  
 
   return (
     <div className="signIn">
+      <h1>Med&middot;Monitor</h1>
       <p className="signIn__para">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut,
         repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit
