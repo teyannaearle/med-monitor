@@ -1,23 +1,47 @@
+@import "../../styleUtils/colors";
+
 .nav {
+    @include muted-background;
     height: 64px;
     width: 100%;
     margin-bottom: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
-    img {
-        float: left;
+    &__image{
         height: 100%;
-        margin-left: 20px;
-        display: flex;
+        img {
+            height: 100%;
+            margin-left: 20px;
+            display: flex;
+        }
     }
 
     &__list{
         margin-right: 20px;
-        float: right;
-        display: flex;
-        
+
         a {
-            margin : 10px
+            display: inline-block;
+            margin : 10px;
+            background-color: $blue;
+            padding: 10px;
+            border-radius: 4px;
+            color: ivory;
+
+            &:hover{
+                transform: scale(1.02);
+            }
+
+            &:last-child{
+                color: $blue;
+                background-color: ivory;
+            }
         }
-    }
+
+        }
+
+    
 }
