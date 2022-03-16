@@ -3,7 +3,7 @@ import { apiURL } from "../../util/apiURL.js";
 import { useNavigate } from "react-router-dom";
 // import { useContext } from "react";
 // import { UserContext } from "../../providers/UserProvider";
-import { signInWithGoogle, userSignOut } from "../../services/firebase";
+import { signInWithGoogle } from "../../services/firebase";
 import GoogleButton from "react-google-button";
 import "./SignIn.scss";
 
@@ -62,9 +62,6 @@ function SignInForm() {
         eaque?
       </p>
       <GoogleButton onClick={signIn} className="signIn__button" />
-      <a href="#" onClick={userSignOut}>
-        Sign out
-      </a>
     </div>
   );
 }

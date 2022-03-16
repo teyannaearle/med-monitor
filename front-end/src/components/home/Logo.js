@@ -1,8 +1,8 @@
 import React from "react"
-import "./Intro.scss"
+import "./Logo.scss"
 import medImage from "../../assets/med-monitor.png"
 
-function Intro() {
+function Logo() {
   return (
     <div className="intro">
       <img className="intro__pic" src={medImage} alt="Med Monitor Logo"/>
@@ -10,4 +10,4 @@ function Intro() {
   )
 }
 
-export default Intro
+export default Logo

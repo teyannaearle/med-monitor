@@ -5,7 +5,7 @@ import { UserContext } from "./providers/UserProvider";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./util/PrivateRoute";
 import HomePage from "./pages/home/HomePage";
-import Dashboard from "./pages/home/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 const API = apiURL();
 
@@ -16,7 +16,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
-  
         <Route element ={<PrivateRoute />}>
           <Route path = "/dashboard" element={<Dashboard />} />
         </Route>
