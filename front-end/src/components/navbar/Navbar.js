@@ -5,10 +5,10 @@ import "./Navbar.scss";
 function Navbar() {
   return (
     <nav className="nav">
-      <div className="nav__image">
+      <a className="nav__image" href="/dashboard">
         <img src={medImage} alt="Med Monitor Logo" />
         <p>Med&middot;Monitor</p>
-      </div>
+      </a>
       <div className="nav__list">
         <a href="#">Pharmacies and Doctors</a>
         <a href="/dashboard" onClick={userSignOut}>

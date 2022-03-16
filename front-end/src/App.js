@@ -5,7 +5,7 @@ import { apiURL } from "./util/apiURL.js";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./util/PrivateRoute";
 import HomePage from "./pages/home/HomePage";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dash/Dashboard";
 const API = apiURL();
 
 function App() {
