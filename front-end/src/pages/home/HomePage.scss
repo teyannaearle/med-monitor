@@ -2,7 +2,7 @@
 
 .homePage{    
     &__main{
-        width: 80%;
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -12,6 +12,17 @@
             width: 100%;
             display: grid;
             grid-template-columns: 50% 50%;
+        }
+    }
+}
+
+
+@media screen and (max-width:1000px) {
+    .homePage{
+        &__main{
+            >div{
+                grid-template-columns: 100%;
+            }
         }
     }
 }

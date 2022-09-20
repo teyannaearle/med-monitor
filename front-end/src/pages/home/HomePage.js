@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import Logo from "../../components/home/Logo"
 import SignIn from "../../components/home/SignIn"
 import { useNavigate } from 'react-router-dom';

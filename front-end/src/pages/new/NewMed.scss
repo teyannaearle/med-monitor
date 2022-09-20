@@ -1,0 +1,8 @@
+@import "../../styleUtils/styles";
+
+.newMed{
+    form {
+        @include muted-background;
+
+    }
+}

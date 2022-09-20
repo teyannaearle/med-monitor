@@ -1,4 +1,3 @@
-import React from "react"
 import "./Logo.scss"
 import medImage from "../../assets/med-monitor.png"
 
