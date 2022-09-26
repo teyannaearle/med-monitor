@@ -49,3 +49,13 @@
 
     
 }
+
+@media screen and (max-width:800px){
+    .nav{
+        &__image{
+            p {
+                display: none;
+            }
+        }
+    }
+}
