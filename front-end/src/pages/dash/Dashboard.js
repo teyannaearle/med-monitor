@@ -9,8 +9,8 @@ function Dashboard() {
         <div className="dash__menu">
           <a href="/add-new-med"> Add Medication For Tracking </a>
           <div className="dash__menu__search">
-            <input placeholder="Search my Meds"></input>
-            <button>Search</button>
+            <input placeholder="Search"></input>
+            <button>Search my Meds</button>
           </div>
         </div>
       </div>
