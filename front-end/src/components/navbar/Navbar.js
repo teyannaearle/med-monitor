@@ -10,7 +10,7 @@ function Navbar() {
         <p>Med&middot;Monitor</p>
       </a>
       <div className="nav__list">
-        <a href="#">Pharmacies and Doctors</a>
+        <a href="/pharmacies-and-docs">Pharmacies and Doctors</a>
         <a href="/dashboard" onClick={userSignOut}>
           Sign out
         </a>

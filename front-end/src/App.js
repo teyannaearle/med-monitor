@@ -7,7 +7,8 @@ import PrivateRoute from "./util/PrivateRoute";
 import HomePage from "./pages/home/HomePage";
 import Dashboard from "./pages/dash/Dashboard";
 import NewMed from "./pages/new/NewMed";
-const API = apiURL();
+import PharmAndDoc from "./pages/docInfo/PharmAndDoc";
+// const API = apiURL();
 
 function App() {
   // const user = useContext(UserContext);
@@ -18,6 +19,7 @@ function App() {
         <Route element ={<PrivateRoute />}>
           <Route path = "/dashboard" element={<Dashboard />} />
           <Route path = "/add-new-med" element={<NewMed />} />
+          <Route path = "/pharmacies-and-docs" element={<PharmAndDoc />} />
         </Route>
       </Routes>
     </div>
