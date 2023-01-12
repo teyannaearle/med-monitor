@@ -25,6 +25,7 @@ function SignInForm() {
           })
           .then((res) => {
             if (res.data.success) {
+              localStorage.setItem("loggedIn", true)
               navigate("/dashboard");
             } else {
               signUp(email, accessToken);
@@ -46,6 +47,7 @@ function SignInForm() {
         })
         .then((res) => {
           if (res.data.success) {
+            localStorage.setItem("loggedIn", true)
             navigate("/dashboard");
           }
         });

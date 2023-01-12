@@ -14,7 +14,7 @@ users.get("/:email", async (req, res) => {
         payload: user,
       });
     } else {
-      res.status(200).json({
+      res.status(202).json({
         success: false,
         payload: `No registered user found with email ${email}`,
       });
