@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../../components/navbar/Navbar'
 
 function PharmAndDoc() {
   return (
-    <div>PharmAndDoc</div>
+    <div>
+        <Navbar />
+        PharmAndDoc
+    </div>
   )
 }
 

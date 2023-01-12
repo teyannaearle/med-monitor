@@ -1,5 +1,5 @@
 import "./App.scss";
-import { apiURL } from "./util/apiURL.js";
+// import { apiURL } from "./util/apiURL.js";
 // import { useContext } from "react";
 // import { UserContext } from "./providers/UserProvider";
 import { Routes, Route } from "react-router-dom";
@@ -12,6 +12,7 @@ import PharmAndDoc from "./pages/docInfo/PharmAndDoc";
 
 function App() {
   // const user = useContext(UserContext);
+
   return (
     <div className="App">
       <Routes>
